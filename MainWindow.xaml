@@ -12,15 +12,17 @@
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Content="Submit" HorizontalAlignment="Left" Height="81" Margin="545,285,0,0" VerticalAlignment="Top" Width="168" Grid.ColumnSpan="3"/>
-        <TextBox Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="34" Margin="155,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
-        <Label Grid.ColumnSpan="3" Content="Number of Variables&#xD;&#xA;" HorizontalAlignment="Left" Height="34" Margin="10,71,0,0" VerticalAlignment="Top" Width="140"/>
+        <Button x:Name="Submit" Content="Submit" HorizontalAlignment="Left" Height="81" Margin="545,285,0,0" VerticalAlignment="Top" Width="168" Grid.ColumnSpan="3" Click="Submit_Click"/>
+        <TextBox x:Name="txtNumFields" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="34" Margin="182,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
+        <Label Grid.ColumnSpan="3" Content="Number of Variables&#xD;&#xA;" HorizontalAlignment="Left" Height="34" Margin="38,127,0,0" VerticalAlignment="Top" Width="140"/>
         <Label Grid.ColumnSpan="3" Content="Document number :" HorizontalAlignment="Left" Height="36" Margin="44,10,0,0" VerticalAlignment="Top" Width="118"/>
-        <TextBox Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="36" Margin="167,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90"/>
-        <Label Grid.ColumnSpan="3" Content="Number Repeated" HorizontalAlignment="Left" Height="30" Margin="82,128,0,0" VerticalAlignment="Top" Width="109"/>
-        <TextBox Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="30" Margin="215,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
-        <CheckBox Grid.ColumnSpan="3" Content="Needed in less than 30 days" HorizontalAlignment="Left" Height="22" Margin="191,187,0,0" VerticalAlignment="Top" Width="183" Checked="CheckBox_Checked"/>
-        <CheckBox Grid.ColumnSpan="3" Content="Need in Word format" HorizontalAlignment="Left" Height="22" Margin="191,229,0,0" VerticalAlignment="Top" Width="183" Checked="CheckBox_Checked"/>
+        <TextBox x:Name="txtDocNumber" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="36" Margin="167,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90"/>
+        <Label Grid.ColumnSpan="3" Content="Number Repeated" HorizontalAlignment="Left" Height="30" Margin="110,184,0,0" VerticalAlignment="Top" Width="109"/>
+        <TextBox x:Name="txtNumRepeated" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="30" Margin="242,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
+        <CheckBox x:Name="boolNeedFast" Grid.ColumnSpan="3" Content="Needed in less than 30 days" HorizontalAlignment="Left" Height="22" Margin="219,243,0,0" VerticalAlignment="Top" Width="183"/>
+        <CheckBox x:Name="boolNeedWord" Grid.ColumnSpan="3" Content="Need in Word format" HorizontalAlignment="Left" Height="22" Margin="219,285,0,0" VerticalAlignment="Top" Width="183" Checked="CheckBox_Checked"/>
+        <Label Grid.ColumnSpan="3" Content="Number of pages" HorizontalAlignment="Left" Margin="44,85,0,0" VerticalAlignment="Top" Width="118"/>
+        <TextBox x:Name="txtNumPages" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="26" Margin="182,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
 
     </Grid>
 </Window>
