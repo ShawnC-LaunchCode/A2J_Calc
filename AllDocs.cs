@@ -8,8 +8,12 @@ using System.Threading.Tasks;
 {
     public static class AllDocs
     {
-        static int totalCost;
-        static int docCost;
+        public static int costForPages;
+        public static int costForFields;
+        public static int costForRush;
+        public static int percentWordUpcharge;
+        public static int costWordUpcharge;
+        public static int costGrandTotal;
         public static List<Doc> masterList = new List<Doc>();
     }
 }

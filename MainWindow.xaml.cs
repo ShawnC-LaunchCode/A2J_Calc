@@ -26,7 +26,8 @@ namespace A2J_Calc
         {
             InitializeComponent();
 
-            InitValues();
+            InitValuesDoc();
+            UpdateTotalsValues();
 
         }
 
@@ -34,7 +35,7 @@ namespace A2J_Calc
         {
 
         }
-        private void InitValues()
+        private void InitValuesDoc()
         {
             //Init starting values
             txtDocNumber.Text = (AllDocs.masterList.Count() + 1).ToString();
@@ -47,6 +48,24 @@ namespace A2J_Calc
             txtNumFields.Text = "";
             boolNeedFast.IsChecked = false;
             boolNeedWord.IsChecked = false;
+
+            txtNumPages.Focus();
+        }
+
+        private void UpdateTotalsValues()
+        {
+            numTotalPagesCost.Text = AllDocs.costForPages.ToString();
+
+            numTotalFieldsCost.Text = AllDocs.costForFields.ToString();
+
+            numRushUpchargeAmount.Text = AllDocs.costForRush.ToString();
+
+            numWordUpchargePercent.Text = AllDocs.percentWordUpcharge.ToString();
+
+            numWordUpchargeAmount.Text = AllDocs.percentWordUpcharge.ToString();
+
+            numGrandTotal.Text = AllDocs.costGrandTotal.ToString();
+
         }
 
         private void Submit_Click(object sender, RoutedEventArgs e)
@@ -80,7 +99,7 @@ namespace A2J_Calc
             //MessageBox.Show(currentDoc.ToString());
             AllDocs.masterList.Add(currentDoc);
 
-            InitValues();
+            InitValuesDoc();
 
             
         }
