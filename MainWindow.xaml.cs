@@ -28,6 +28,7 @@ namespace A2J_Calc
 
             InitValuesDoc();
             UpdateTotalsValues();
+            DevValuesRefresh();
 
         }
 
@@ -35,6 +36,20 @@ namespace A2J_Calc
         {
 
         }
+
+        private void DevValuesRefresh()
+        {
+            devTotalPages.Text = AllDocs.TotalPages().ToString();
+
+            devTotalFields.Text = AllDocs.TotalFields().ToString();
+
+            devBoolRush.Text = AllDocs.NeedRush().ToString();
+
+            devTotalPDF.Text = AllDocs.PDFCount().ToString();
+
+            devTotalWord.Text = AllDocs.WordCount().ToString();
+        }
+
         private void InitValuesDoc()
         {
             //Init starting values
@@ -54,9 +69,9 @@ namespace A2J_Calc
 
         private void UpdateTotalsValues()
         {
-            numTotalPagesCost.Text = AllDocs.costForPages.ToString();
+            numTotalPagesCost.Text = AllDocs.CostLookupPages();
 
-            numTotalFieldsCost.Text = AllDocs.costForFields.ToString();
+            numTotalFieldsCost.Text = AllDocs.CostLookupFields();
 
             numRushUpchargeAmount.Text = AllDocs.costForRush.ToString();
 
@@ -100,8 +115,12 @@ namespace A2J_Calc
             AllDocs.masterList.Add(currentDoc);
 
             InitValuesDoc();
+            UpdateTotalsValues();
+            DevValuesRefresh();
 
             
         }
+
+       
     }
 }

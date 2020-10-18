@@ -8,11 +8,11 @@ namespace A2J_Calc
 {
     public class Doc
     {
-        int numPages;
-        int numFields;
-        int numRepeated;
-        bool needFast;
-        bool needWord;
+        public int numPages;
+        public int numFields;
+        public int numRepeated;
+        public bool needFast;
+        public bool needWord;
 
         public Doc(int numPages, int numFields, int numRepeated, bool needFast, bool needWord)
         {

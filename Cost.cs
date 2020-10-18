@@ -8,6 +8,9 @@ namespace A2J_Calc
 {
     public static class Cost
     {
+        public static int hourlyNormal = 125;
+        public static int hourlyDiscount = 100;
+        
         public static int Rush = 10; //Less than 30 days upcharge
 
         public static Dictionary<string, int> DocTypeUpcharge = new Dictionary<string, int>
@@ -19,6 +22,7 @@ namespace A2J_Calc
 
         public static Dictionary<string, int> PageCost = new Dictionary<string, int>
         {
+            { "Zero",   0 }, //Added to keep initial screen clean
             { "1To5",   4 },
             { "6To10",  6 },
             { "11To20", 8 },
@@ -29,6 +33,7 @@ namespace A2J_Calc
 
         public static Dictionary<string, int> FieldCost1To5 = new Dictionary<string, int>
         {
+            { "Zero",   0 },
             { "1To10",  2 },
             { "10To20", 4 },
             { "21To40", 6 },
@@ -37,6 +42,7 @@ namespace A2J_Calc
 
         public static Dictionary<string, int> FieldCost6To10 = new Dictionary<string, int>
         {
+            { "Zero",   0 },
             { "1To10",  2 },
             { "10To20", 4 },
             { "21To40", 8 },
@@ -45,6 +51,7 @@ namespace A2J_Calc
 
         public static Dictionary<string, int> FieldCost11To20 = new Dictionary<string, int>
         {
+            { "Zero",   0 },
             { "1To10",  3 },
             { "10To20", 6 },
             { "21To40", 10},
@@ -52,6 +59,7 @@ namespace A2J_Calc
         };
         public static Dictionary<string, int> FieldCost21To30 = new Dictionary<string, int>
         {
+            { "Zero",   0 },
             { "1To10",  3 },
             { "10To20", 8 },
             { "21To40", 14},
@@ -60,6 +68,7 @@ namespace A2J_Calc
 
         public static Dictionary<string, int> FieldCost31To40 = new Dictionary<string, int>
         {
+            { "Zero",   0 },
             { "1To10",  3 },
             { "10To20", 8 },
             { "21To40", 14},
@@ -68,11 +77,21 @@ namespace A2J_Calc
 
         public static Dictionary<string, int> FieldCost41To50 = new Dictionary<string, int>
         {
+            { "Zero",   0 },
             { "1To10",  4 },
             { "10To20", 10},
             { "21To40", 16},
             { "41To50", 22} //Anything beyond 50 needs custom quote, and shouldnt be getting looked up
         };
+
+        public static int Hourly() //Hourly is 125, unless more than 5 docs, then 100
+        {
+            if (AllDocs.masterList.Count() > 5)
+            {
+                return hourlyDiscount;
+            }
+            return hourlyNormal;
+        }
 
     }
 }
