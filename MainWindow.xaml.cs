@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace A2J_Calc
 {
     /// <summary>
@@ -20,28 +21,12 @@ namespace A2J_Calc
     /// </summary>
     public partial class MainWindow : Window
     {
+      
         public MainWindow()
         {
             InitializeComponent();
 
-            int totalCost;
-            int docCost;
-            List<Doc> masterList;
-
-
-            //Init starting values
-            txtDocNumber.Text = "1";
-            txtDocNumber.IsReadOnly=true;
-
-
-            txtNumPages.Text = "1";
-            txtNumRepeated.Text = "0";
-
-            txtNumFields.Text = "0";
-            boolNeedFast.IsChecked = false;
-            boolNeedWord.IsChecked = false;
-            
-
+            InitValues();
 
         }
 
@@ -49,11 +34,25 @@ namespace A2J_Calc
         {
 
         }
+        private void InitValues()
+        {
+            //Init starting values
+            txtDocNumber.Text = (AllDocs.masterList.Count() + 1).ToString();
+            txtDocNumber.IsReadOnly = true;
+
+
+            txtNumPages.Text = "";
+            txtNumRepeated.Text = "";
+
+            txtNumFields.Text = "";
+            boolNeedFast.IsChecked = false;
+            boolNeedWord.IsChecked = false;
+        }
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            //int test = Int32.Parse(txtNumPages.Text);
-            //MessageBox.Show(test);
+           //data validation and object creation
+            
             int numPages;
             if (!Int32.TryParse(txtNumPages.Text, out numPages))
             {
@@ -76,9 +75,14 @@ namespace A2J_Calc
 
             bool needWord = boolNeedWord.IsChecked ?? false;
 
-            Doc test = new Doc(numPages, numFields, numRepeated, needFast, needWord);
+            Doc currentDoc = new Doc(numPages, numFields, numRepeated, needFast, needWord);
 
-            MessageBox.Show(test.ToString());
+            //MessageBox.Show(currentDoc.ToString());
+            AllDocs.masterList.Add(currentDoc);
+
+            InitValues();
+
+            
         }
     }
 }

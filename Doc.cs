@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace A2J_Calc
 {
-    class Doc
+    public class Doc
     {
         int numPages;
         int numFields;
