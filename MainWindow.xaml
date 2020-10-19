@@ -24,16 +24,16 @@
         <Label Grid.ColumnSpan="3" Content="Number of pages" HorizontalAlignment="Left" Margin="44,85,0,0" VerticalAlignment="Top" Width="118" Height="27"/>
         <TextBox x:Name="txtNumPages" Grid.ColumnSpan="3" TabIndex="1"  HorizontalAlignment="Left" Height="27" Margin="182,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37"/>
         <Label Grid.ColumnSpan="3" Content="Cost for pages:" HorizontalAlignment="Left" Height="27" Margin="337,36,0,0" VerticalAlignment="Top" Width="136"/>
-        <TextBox x:Name="numTotalPagesCost" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="447,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
+        <TextBox x:Name="numTotalPagesCost" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="447,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151"/>
         <Label Grid.ColumnSpan="3" Content="Cost for fields:" HorizontalAlignment="Left" Height="27" Margin="345,88,0,0" VerticalAlignment="Top" Width="85"/>
-        <TextBox x:Name="numTotalFieldsCost" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="447,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
+        <TextBox x:Name="numTotalFieldsCost" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="447,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151"/>
         <Label Grid.ColumnSpan="3" Content="Upcharge for rush:" HorizontalAlignment="Left" Height="27" Margin="315,133,0,0" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="numRushUpchargeAmount" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="447,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
+        <TextBox x:Name="numRushUpchargeAmount" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="447,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151"/>
         <Label Grid.ColumnSpan="3" Content="Upcharge for Word format:" HorizontalAlignment="Left" Height="27" Margin="282,174,0,0" VerticalAlignment="Top" Width="158"/>
         <TextBox x:Name="numWordUpchargePercent" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="445,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39"/>
-        <TextBox x:Name="numWordUpchargeAmount" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="503,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="numWordUpchargeAmount" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="503,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95"/>
         <Label Grid.ColumnSpan="3" Content="Grand Total:" HorizontalAlignment="Left" Height="27" Margin="315,233,0,0" VerticalAlignment="Top" Width="136"/>
-        <TextBox x:Name="numGrandTotal" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="445,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133"/>
+        <TextBox x:Name="numGrandTotal" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="445,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153"/>
         <Label Grid.ColumnSpan="3" Content="Total pages" HorizontalAlignment="Left" Height="27" Margin="644,36,0,0" VerticalAlignment="Top" Width="76"/>
         <TextBox x:Name="devTotalPages" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="725,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62"/>
         <Label Grid.ColumnSpan="3" Content="Total Fields" HorizontalAlignment="Left" Height="27" Margin="644,85,0,0" VerticalAlignment="Top" Width="64"/>
@@ -47,6 +47,7 @@
         <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="284" Margin="625,20,0,0" VerticalAlignment="Top" Width="229">
             <Label Content="Dev box, to be removed" HorizontalAlignment="Left" Height="37" Margin="8.667,235.667,0,0" VerticalAlignment="Top" Width="209" BorderBrush="Black" OpacityMask="Black" FontWeight="Bold"/>
         </Border>
+        <Button x:Name="Clear" Content="Clear all documents" HorizontalAlignment="Left" TabIndex="6" Height="27" Margin="44,333,0,0" VerticalAlignment="Top" Width="175" Grid.ColumnSpan="3" Click="Submit_Click"/>
 
     </Grid>
 </Window>

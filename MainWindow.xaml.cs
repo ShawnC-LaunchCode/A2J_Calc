@@ -69,17 +69,55 @@ namespace A2J_Calc
 
         private void UpdateTotalsValues()
         {
-            numTotalPagesCost.Text = AllDocs.CostLookupPages();
+            int total = 0;
+            int subTotal = 0;
+            if (AllDocs.TotalPages()>50 || AllDocs.TotalFields() > 50)
+            {
+                numTotalPagesCost.Text = numTotalFieldsCost.Text = numGrandTotal.Text ="This needs a custom quote.";
+                return;
+            } else
+            {
+                numTotalPagesCost.Text = AllDocs.CostLookupPages().ToString();
+                numTotalFieldsCost.Text = AllDocs.CostLookupFields().ToString();
+                total += AllDocs.CostLookupPages() + AllDocs.CostLookupFields();
+            }
+            
+            if (AllDocs.NeedRush())
+            {
+                numRushUpchargeAmount.Text = (total * ((float)Cost.Rush / 100)).ToString();
+                subTotal += (int)(total * (float)Cost.Rush / 100);
+            }
 
-            numTotalFieldsCost.Text = AllDocs.CostLookupFields();
 
-            numRushUpchargeAmount.Text = AllDocs.costForRush.ToString();
+            float tempTotal = AllDocs.CostLookupPages() + AllDocs.CostLookupFields();
+             
+            if (AllDocs.WordCount() != 0)
+            {
+                if (AllDocs.PDFCount() == 0)
+                { // All word docs
+                    numWordUpchargePercent.Text = Cost.DocTypeUpcharge["AllWord"].ToString();
+                    numWordUpchargeAmount.Text = (tempTotal* Cost.DocTypeUpcharge["AllWord"]/100).ToString();
+                    subTotal += (int)(tempTotal * Cost.DocTypeUpcharge["AllWord"] / 100);
+                }
+                else
+                { //Mixed word and PDF
+                    numWordUpchargePercent.Text = Cost.DocTypeUpcharge["MixedWord"].ToString();
+                    numWordUpchargeAmount.Text = (tempTotal* Cost.DocTypeUpcharge["MixedWord"]/100).ToString();
+                    subTotal += (int)(tempTotal * Cost.DocTypeUpcharge["MixedWord"] / 100);
+                }
+            }
+            else
+            { //All PDF
+                numWordUpchargePercent.Text = Cost.DocTypeUpcharge["AllPDF"].ToString();
+                numWordUpchargeAmount.Text = (tempTotal* Cost.DocTypeUpcharge["AllPDF"]/100).ToString();
+                subTotal += (int)(tempTotal * Cost.DocTypeUpcharge["AllPDF"] / 100);
+            }
 
-            numWordUpchargePercent.Text = AllDocs.percentWordUpcharge.ToString();
+            
 
-            numWordUpchargeAmount.Text = AllDocs.percentWordUpcharge.ToString();
+            
 
-            numGrandTotal.Text = AllDocs.costGrandTotal.ToString();
+            numGrandTotal.Text = (total + subTotal).ToString();
 
         }
 

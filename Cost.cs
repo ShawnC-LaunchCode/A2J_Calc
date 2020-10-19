@@ -9,9 +9,9 @@ namespace A2J_Calc
     public static class Cost
     {
         public static int hourlyNormal = 125;
-        public static int hourlyDiscount = 100;
+        public static int hourlyDiscount = 100; // Greater than 5 documents
         
-        public static int Rush = 10; //Less than 30 days upcharge
+        public static int Rush = 10; //Less than 30 days upcharge, percent
 
         public static Dictionary<string, int> DocTypeUpcharge = new Dictionary<string, int>
         {
