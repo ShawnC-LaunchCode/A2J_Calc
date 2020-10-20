@@ -8,19 +8,21 @@ namespace A2J_Calc
 {
     public class Doc
     {
+        public string title;
         public int numPages;
         public int numFields;
-        public int numRepeated;
+        
         public bool needFast;
-        public bool needWord;
+        public bool isWordFormat;
 
-        public Doc(int numPages, int numFields, int numRepeated, bool needFast, bool needWord)
+        public Doc(int numPages, int numFields, bool needFast, bool isWordFormat, string title = "None")
         {
             this.numPages = numPages;
             this.numFields = numFields;
-            this.numRepeated = numRepeated;
+            
             this.needFast = needFast;
-            this.needWord = needWord;
+            this.isWordFormat = isWordFormat;
+            this.title = title;
         }
 
         public override string ToString()
@@ -28,9 +30,9 @@ namespace A2J_Calc
             string output = "";
             output += "numPages:" + this.numPages;
             output += "\nnumFields:" + this.numFields;
-            output += "\nnumRepeated:" + this.numRepeated;
+           
             output += "\nneedFast:" + this.needFast;
-            output += "\nneedWord" + this.needWord;
+            output += "\nneedWord" + this.isWordFormat;
 
 
             return output;

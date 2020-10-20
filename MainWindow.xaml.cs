@@ -53,18 +53,23 @@ namespace A2J_Calc
         private void InitValuesDoc()
         {
             //Init starting values
+            numTotalDocs.Text = AllDocs.masterList.Count().ToString();
+            numTotalDocs.IsReadOnly = true;
+
+            stringDocTitle.Text = "";
+
             txtDocNumber.Text = (AllDocs.masterList.Count() + 1).ToString();
             txtDocNumber.IsReadOnly = true;
 
 
             txtNumPages.Text = "";
-            txtNumRepeated.Text = "";
+            
 
             txtNumFields.Text = "";
             boolNeedFast.IsChecked = false;
             boolNeedWord.IsChecked = false;
 
-            txtNumPages.Focus();
+            stringDocTitle.Focus();
         }
 
         private void UpdateTotalsValues()
@@ -74,6 +79,7 @@ namespace A2J_Calc
             if (AllDocs.TotalPages()>50 || AllDocs.TotalFields() > 50)
             {
                 numTotalPagesCost.Text = numTotalFieldsCost.Text = numGrandTotal.Text ="This needs a custom quote.";
+                numRushUpchargeAmount.Text = numWordUpchargePercent.Text = numWordUpchargeAmount.Text = "";
                 return;
             } else
             {
@@ -137,17 +143,15 @@ namespace A2J_Calc
                 MessageBox.Show("The number of fields must be a whole number. Thank you");
             }
 
-            int numRepeated;
-            if (!Int32.TryParse(txtNumRepeated.Text, out numRepeated))
-            {
-                MessageBox.Show("The number of fields repeated must be a whole number. Thank you");
-            }
+           
 
             bool needFast = boolNeedFast.IsChecked ?? false;
 
             bool needWord = boolNeedWord.IsChecked ?? false;
 
-            Doc currentDoc = new Doc(numPages, numFields, numRepeated, needFast, needWord);
+            string title = stringDocTitle.Text;
+
+            Doc currentDoc = new Doc(numPages, numFields,  needFast, needWord, title);
 
             //MessageBox.Show(currentDoc.ToString());
             AllDocs.masterList.Add(currentDoc);
@@ -159,6 +163,13 @@ namespace A2J_Calc
             
         }
 
-       
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            AllDocs.masterList.Clear();
+
+            InitValuesDoc();
+            UpdateTotalsValues();
+            DevValuesRefresh();
+        }
     }
 }

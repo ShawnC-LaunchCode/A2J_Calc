@@ -56,7 +56,7 @@ using System.Threading.Tasks;
             int output = 0;
             foreach (var thing in masterList)
             {
-                if (!thing.needWord)
+                if (!thing.isWordFormat)
                 {
                     output += 1;
                 }
@@ -69,7 +69,7 @@ using System.Threading.Tasks;
             int output = 0;
             foreach (var thing in masterList)
             {
-                if (thing.needWord)
+                if (thing.isWordFormat)
                 {
                     output += 1;
                 }
