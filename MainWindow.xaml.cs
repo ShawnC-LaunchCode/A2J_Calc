@@ -26,6 +26,8 @@ namespace A2J_Calc
         {
             InitializeComponent();
 
+            AllDocs.currentDocNumber = 1;
+
             InitValuesDoc();
             UpdateTotalsValues();
             DevValuesRefresh();
@@ -58,8 +60,8 @@ namespace A2J_Calc
 
             stringDocTitle.Text = "";
 
-            txtDocNumber.Text = (AllDocs.masterList.Count() + 1).ToString();
-            txtDocNumber.IsReadOnly = true;
+            numCurrentDocNumber.Text = AllDocs.currentDocNumber.ToString();
+            numCurrentDocNumber.IsReadOnly = true;
 
 
             txtNumPages.Text = "";
@@ -129,8 +131,71 @@ namespace A2J_Calc
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-           //data validation and object creation
             
+            if (AllDocs.currentDocNumber < AllDocs.masterList.Count)//if current doc is less than max, update info
+            {
+                AllDocs.masterList[AllDocs.currentDocNumber - 1] = GatherDocInfo();
+                AllDocs.currentDocNumber++;
+                DisplayDoc(AllDocs.currentDocNumber);
+            } else
+            {
+                AllDocs.masterList.Add(GatherDocInfo());
+                AllDocs.currentDocNumber++;
+                InitValuesDoc();
+
+            }
+
+            
+            UpdateTotalsValues();
+            DevValuesRefresh();
+        }
+
+        private void PreviousDoc_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (AllDocs.currentDocNumber > 1)
+            {
+                if (!DocEmpty())
+                {
+                    AllDocs.masterList[AllDocs.currentDocNumber - 1] = GatherDocInfo();
+                }
+                  
+                AllDocs.currentDocNumber--;
+                DisplayDoc(AllDocs.currentDocNumber);
+            }
+            UpdateTotalsValues();
+            DevValuesRefresh();
+        }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            AllDocs.masterList.Clear();
+            AllDocs.currentDocNumber = 1;
+
+            InitValuesDoc();
+            UpdateTotalsValues();
+            DevValuesRefresh();
+        }
+
+       
+
+        private void DisplayDoc(int docNum)
+        {   
+            
+            Doc currentDoc = AllDocs.masterList[docNum-1];
+
+            numCurrentDocNumber.Text = AllDocs.currentDocNumber.ToString();
+            stringDocTitle.Text = currentDoc.title;
+            txtNumPages.Text = currentDoc.numPages.ToString();
+            txtNumFields.Text = currentDoc.numFields.ToString();
+            boolNeedWord.IsChecked = currentDoc.needFast;
+            boolNeedFast.IsChecked = currentDoc.needFast;
+        }
+
+       
+
+        private Doc GatherDocInfo()
+        {
             int numPages;
             if (!Int32.TryParse(txtNumPages.Text, out numPages))
             {
@@ -143,7 +208,7 @@ namespace A2J_Calc
                 MessageBox.Show("The number of fields must be a whole number. Thank you");
             }
 
-           
+
 
             bool needFast = boolNeedFast.IsChecked ?? false;
 
@@ -151,25 +216,21 @@ namespace A2J_Calc
 
             string title = stringDocTitle.Text;
 
-            Doc currentDoc = new Doc(numPages, numFields,  needFast, needWord, title);
+            Doc currentDoc = new Doc(numPages, numFields, needFast, needWord, title);
 
-            //MessageBox.Show(currentDoc.ToString());
-            AllDocs.masterList.Add(currentDoc);
-
-            InitValuesDoc();
-            UpdateTotalsValues();
-            DevValuesRefresh();
-
-            
+            return currentDoc;
         }
 
-        private void Clear_Click(object sender, RoutedEventArgs e)
+        public bool DocEmpty()
         {
-            AllDocs.masterList.Clear();
-
-            InitValuesDoc();
-            UpdateTotalsValues();
-            DevValuesRefresh();
+            bool output = false;
+            if(stringDocTitle.Text + txtNumPages.Text + txtNumFields.Text == "") //ignoring data if just checks
+            {
+                output = true;
+            }
+            return output;
         }
+
+        
     }
 }

@@ -16,6 +16,7 @@ using System.Threading.Tasks;
         public static int costWordUpcharge;
         public static int costGrandTotal;
         public static List<Doc> masterList = new List<Doc>();
+        public static int currentDocNumber;
 
         public static int TotalPages()
         {

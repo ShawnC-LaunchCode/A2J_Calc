@@ -16,7 +16,7 @@
         <TextBox x:Name="txtNumFields" Grid.ColumnSpan="3" TabIndex="3" HorizontalAlignment="Left" Height="27" Margin="195,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37"/>
         <Label Grid.ColumnSpan="3" Content="Number of Variables&#xD;&#xA;" HorizontalAlignment="Left" Height="27" Margin="51,182,0,0" VerticalAlignment="Top" Width="140"/>
         <Label Grid.ColumnSpan="3" Content="Document Number:" HorizontalAlignment="Left" Height="27" Margin="51,59,0,0" VerticalAlignment="Top" Width="163"/>
-        <TextBox x:Name="txtDocNumber"  Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="221,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        <TextBox x:Name="numCurrentDocNumber"  Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="221,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
         <CheckBox x:Name="boolNeedFast" Grid.ColumnSpan="3" TabIndex="5" Content="Needed in less than 30 days" HorizontalAlignment="Left" Height="27" Margin="100,263,0,0" VerticalAlignment="Top" Width="183"/>
         <CheckBox x:Name="boolNeedWord" Grid.ColumnSpan="3" TabIndex="4" Content="Source doc is in Word format" HorizontalAlignment="Left" Height="27" Margin="100,231,0,0" VerticalAlignment="Top" Width="183" Checked="CheckBox_Checked"/>
         <Label Grid.ColumnSpan="3" Content="Number of pages" HorizontalAlignment="Left" Margin="57,140,0,0" VerticalAlignment="Top" Width="118" Height="27"/>
@@ -50,7 +50,7 @@
         <TextBox x:Name="stringDocTitle" Grid.ColumnSpan="3" TabIndex="1" HorizontalAlignment="Left" Height="31" Margin="132,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
         <Label Grid.ColumnSpan="3" Content="Total Documents:" HorizontalAlignment="Left" Height="34" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>
         <TextBox x:Name="numTotalDocs" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="24" Margin="132,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
-        <Button x:Name="Submit_Copy" Content="Previous Document" HorizontalAlignment="Left" TabIndex="6" Height="27" Margin="19,299,0,0" VerticalAlignment="Top" Width="175" Grid.ColumnSpan="3" Click="Submit_Click"/>
+        <Button x:Name="PreviousDoc" Content="Previous Document" HorizontalAlignment="Left" TabIndex="6" Height="27" Margin="19,299,0,0" VerticalAlignment="Top" Width="175" Grid.ColumnSpan="3" Click="PreviousDoc_Click"/>
 
     </Grid>
 </Window>
