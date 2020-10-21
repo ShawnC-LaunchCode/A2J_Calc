@@ -81,7 +81,8 @@ namespace A2J_Calc
             int subTotal = 0;
             if (AllDocs.TotalPages()>50 || AllDocs.TotalFields() > 50)
             {
-                //numTotalPagesCost.Text = numTotalFieldsCost.Text = numGrandTotal.Text ="This needs a custom quote.";
+                //numTotalPagesCost.Text = numTotalFieldsCost.Text = 
+                numGrandTotal.Text ="This needs a custom quote.";
                 numRushUpchargeAmount.Text = numWordUpchargePercent.Text = numWordUpchargeAmount.Text = "";
                 return;
             } else
@@ -124,9 +125,14 @@ namespace A2J_Calc
 
             
 
-            
-
-            numGrandTotal.Text = "$" +(total + subTotal).ToString();
+            if(AllDocs.TotalFields() > 50 || AllDocs.TotalPages() > 50)
+            {
+                numGrandTotal.Text = "This needs a custom quote.";
+            } else
+            {
+                numGrandTotal.Text = "$" +(total + subTotal).ToString();
+            }
+        
             numGrandTotal.IsReadOnly = true;
 
         }

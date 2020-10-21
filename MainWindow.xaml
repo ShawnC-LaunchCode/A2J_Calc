@@ -47,13 +47,13 @@
         <Label Grid.ColumnSpan="3" Content="Upcharge for Word format:" HorizontalAlignment="Left" Height="27" Margin="631,140,-261,0" VerticalAlignment="Top" Width="158"/>
         <TextBox x:Name="numWordUpchargePercent" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="794,140,-305,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39"/>
         <TextBox x:Name="numWordUpchargeAmount" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="852,140,-419,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95"/>
-        <Label Grid.ColumnSpan="3" Content="Grand Total:" HorizontalAlignment="Left" Height="24" Margin="196,44,0,0" VerticalAlignment="Top" Width="75"/>
-        <TextBox x:Name="numGrandTotal" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="20" Margin="271,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" TextAlignment="Right"/>
+        <Label Grid.ColumnSpan="3" Content="Grand Total:" HorizontalAlignment="Left" Height="24" Margin="182,44,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="numGrandTotal" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="20" Margin="262,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" TextAlignment="Right"/>
         <Button x:Name="Clear" Content="Clear all documents" HorizontalAlignment="Left" TabIndex="6" Height="27" Margin="114,358,0,0" VerticalAlignment="Top" Width="175" Grid.ColumnSpan="3" Click="Clear_Click"/>
         <Label Grid.ColumnSpan="3" Content="Document title:" HorizontalAlignment="Left" Height="24" Margin="73,114,0,0" ToolTip="Your title for this document." VerticalAlignment="Top" Width="91"/>
         <TextBox x:Name="stringDocTitle" Grid.ColumnSpan="3" TabIndex="1" HorizontalAlignment="Left" Height="20" Margin="164,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
-        <Label Grid.ColumnSpan="3" Content="Total Documents:" HorizontalAlignment="Left" Height="24" Margin="280,15,0,0" VerticalAlignment="Top" Width="101"/>
-        <TextBox x:Name="numTotalDocs" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="20" Margin="381,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37" TextAlignment="Right"/>
+        <Label Grid.ColumnSpan="3" Content="Total Documents:" HorizontalAlignment="Left" Height="24" Margin="276,15,0,0" VerticalAlignment="Top" Width="101"/>
+        <TextBox x:Name="numTotalDocs" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="20" Margin="377,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37" TextAlignment="Right"/>
         <Button x:Name="PreviousDoc" Content="Previous Document" HorizontalAlignment="Left" TabIndex="6" Height="27" Margin="30,314,0,0" VerticalAlignment="Top" Width="175" Grid.ColumnSpan="3" Click="PreviousDoc_Click"/>
         <Image Source="https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/2140654/145757_989657.png" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="45" Margin="19,14,0,0" VerticalAlignment="Top" Width="182"/>
 
