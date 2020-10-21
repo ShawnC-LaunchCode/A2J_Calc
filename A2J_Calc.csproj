@@ -93,6 +93,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="src\images\A2J.webp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

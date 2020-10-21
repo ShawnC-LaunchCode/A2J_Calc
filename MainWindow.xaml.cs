@@ -30,7 +30,7 @@ namespace A2J_Calc
 
             InitValuesDoc();
             UpdateTotalsValues();
-            DevValuesRefresh();
+            //DevValuesRefresh();
 
         }
 
@@ -41,15 +41,15 @@ namespace A2J_Calc
 
         private void DevValuesRefresh()
         {
-            devTotalPages.Text = AllDocs.TotalPages().ToString();
+            //devTotalPages.Text = AllDocs.TotalPages().ToString();
 
-            devTotalFields.Text = AllDocs.TotalFields().ToString();
+            //devTotalFields.Text = AllDocs.TotalFields().ToString();
 
-            devBoolRush.Text = AllDocs.NeedRush().ToString();
+            //devBoolRush.Text = AllDocs.NeedRush().ToString();
 
-            devTotalPDF.Text = AllDocs.PDFCount().ToString();
+            //devTotalPDF.Text = AllDocs.PDFCount().ToString();
 
-            devTotalWord.Text = AllDocs.WordCount().ToString();
+            //devTotalWord.Text = AllDocs.WordCount().ToString();
         }
 
         private void InitValuesDoc()
@@ -80,13 +80,13 @@ namespace A2J_Calc
             int subTotal = 0;
             if (AllDocs.TotalPages()>50 || AllDocs.TotalFields() > 50)
             {
-                numTotalPagesCost.Text = numTotalFieldsCost.Text = numGrandTotal.Text ="This needs a custom quote.";
+                //numTotalPagesCost.Text = numTotalFieldsCost.Text = numGrandTotal.Text ="This needs a custom quote.";
                 numRushUpchargeAmount.Text = numWordUpchargePercent.Text = numWordUpchargeAmount.Text = "";
                 return;
             } else
             {
-                numTotalPagesCost.Text = AllDocs.CostLookupPages().ToString();
-                numTotalFieldsCost.Text = AllDocs.CostLookupFields().ToString();
+                //numTotalPagesCost.Text = AllDocs.CostLookupPages().ToString();
+                //numTotalFieldsCost.Text = AllDocs.CostLookupFields().ToString();
                 total += AllDocs.CostLookupPages() + AllDocs.CostLookupFields();
             }
             
@@ -132,11 +132,26 @@ namespace A2J_Calc
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
             
-            if (AllDocs.currentDocNumber < AllDocs.masterList.Count)//if current doc is less than max, update info
+            if (AllDocs.currentDocNumber <= AllDocs.masterList.Count)//if current doc is less than max, update info
             {
+                //update current record, if changes or not
                 AllDocs.masterList[AllDocs.currentDocNumber - 1] = GatherDocInfo();
+
+                //move to next record
                 AllDocs.currentDocNumber++;
-                DisplayDoc(AllDocs.currentDocNumber);
+
+                //at new record, master=3, current=4, 
+                if (AllDocs.currentDocNumber > AllDocs.masterList.Count())
+                {
+                    InitValuesDoc();
+                }else
+                {
+                    DisplayDoc(AllDocs.currentDocNumber);
+                }
+                    
+                
+                
+                
             } else
             {
                 AllDocs.masterList.Add(GatherDocInfo());
@@ -147,7 +162,7 @@ namespace A2J_Calc
 
             
             UpdateTotalsValues();
-            DevValuesRefresh();
+            //DevValuesRefresh();
         }
 
         private void PreviousDoc_Click(object sender, RoutedEventArgs e)
@@ -164,7 +179,7 @@ namespace A2J_Calc
                 DisplayDoc(AllDocs.currentDocNumber);
             }
             UpdateTotalsValues();
-            DevValuesRefresh();
+            //DevValuesRefresh();
         }
 
         private void Clear_Click(object sender, RoutedEventArgs e)
@@ -174,7 +189,7 @@ namespace A2J_Calc
 
             InitValuesDoc();
             UpdateTotalsValues();
-            DevValuesRefresh();
+            //DevValuesRefresh();
         }
 
        
@@ -188,7 +203,7 @@ namespace A2J_Calc
             stringDocTitle.Text = currentDoc.title;
             txtNumPages.Text = currentDoc.numPages.ToString();
             txtNumFields.Text = currentDoc.numFields.ToString();
-            boolNeedWord.IsChecked = currentDoc.needFast;
+            boolNeedWord.IsChecked = currentDoc.isWordFormat;
             boolNeedFast.IsChecked = currentDoc.needFast;
         }
 
