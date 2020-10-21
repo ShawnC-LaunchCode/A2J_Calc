@@ -31,6 +31,7 @@ namespace A2J_Calc
             InitValuesDoc();
             UpdateTotalsValues();
             //DevValuesRefresh();
+            
 
         }
 
@@ -125,7 +126,8 @@ namespace A2J_Calc
 
             
 
-            numGrandTotal.Text = (total + subTotal).ToString();
+            numGrandTotal.Text = "$" +(total + subTotal).ToString();
+            numGrandTotal.IsReadOnly = true;
 
         }
 

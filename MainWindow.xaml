@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:A2J_Calc"
         mc:Ignorable="d"
         Title="A2J-Tech Estimate
-        " Height="460" Width="450">
-    <Grid Margin="0,0,-84.667,-0.333">
+        " Height="440" Width="440">
+    <Grid Margin="0,0,3.333,-0.333">
         <Grid.Background>
             <ImageBrush ImageSource="https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1050,w_1200,f_auto,q_auto/2140654/151837_634778.jpeg" Stretch="Uniform" AlignmentY="Top" >
                 <ImageBrush.Transform>
@@ -33,28 +33,28 @@
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="Submit" Content="Next Document" HorizontalAlignment="Left" TabIndex="6" Height="27" Margin="214,343,0,0" VerticalAlignment="Top" Width="175" Grid.ColumnSpan="3" Click="Submit_Click"/>
-        <TextBox x:Name="txtNumFields" Grid.ColumnSpan="3" TabIndex="3" HorizontalAlignment="Left" Height="27" Margin="310,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37"/>
-        <Label  ToolTip="Test" Grid.ColumnSpan="3" Content="Number of Variables&#xD;&#xA;" HorizontalAlignment="Left" Height="27" Margin="166,214,0,0" VerticalAlignment="Top" Width="140"/>
-        <Label Grid.ColumnSpan="3" Content="Document Number:" HorizontalAlignment="Left" Height="27" Margin="196,90,0,0" VerticalAlignment="Top" Width="119"/>
-        <TextBox x:Name="numCurrentDocNumber"  Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="322,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-        <CheckBox x:Name="boolNeedFast" Grid.ColumnSpan="3" TabIndex="5" Content="Needed in less than 30 days" HorizontalAlignment="Left" Height="27" Margin="158,295,0,0" VerticalAlignment="Top" Width="183"/>
-        <CheckBox x:Name="boolNeedWord" Grid.ColumnSpan="3" TabIndex="4" Content="Source doc is in Word format" HorizontalAlignment="Left" Height="27" Margin="158,263,0,0" VerticalAlignment="Top" Width="183" Checked="CheckBox_Checked"/>
-        <Label Grid.ColumnSpan="3" Content="Number of pages" HorizontalAlignment="Left" Margin="172,172,0,0" VerticalAlignment="Top" Width="118" Height="27"/>
-        <TextBox x:Name="txtNumPages" Grid.ColumnSpan="3" TabIndex="2"  HorizontalAlignment="Left" Height="27" Margin="310,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37"/>
+        <Button x:Name="Submit" Content="Next Document" HorizontalAlignment="Left" TabIndex="6" Height="27" Margin="225,314,0,0" VerticalAlignment="Top" Width="175" Grid.ColumnSpan="3" Click="Submit_Click"/>
+        <TextBox x:Name="txtNumFields" Grid.ColumnSpan="3" TabIndex="3" HorizontalAlignment="Left" Height="20" Margin="310,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37" TextAlignment="Right"/>
+        <Label  ToolTip="The total number of blank spaces or items that have to be filled out by the client or attorney." Grid.ColumnSpan="3" Content="Number of variables:&#xA;" HorizontalAlignment="Left" Height="24" Margin="189,173,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Grid.ColumnSpan="3" Content="Document Number:" HorizontalAlignment="Left" Height="24" Margin="203,86,0,0" ToolTip="The current document number you are seeing or inputing." VerticalAlignment="Top" Width="114"/>
+        <TextBox x:Name="numCurrentDocNumber"  Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="20" Margin="322,90,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="25" TextAlignment="Right"/>
+        <CheckBox x:Name="boolNeedFast" Grid.ColumnSpan="3" TabIndex="5" Content="Needed in less than 30 days" HorizontalAlignment="Left" Height="24" Margin="134,243,0,0" ToolTip="If project is needed within 30 days, a 10% rush charge will be applied." VerticalAlignment="Top" Width="183"/>
+        <CheckBox x:Name="boolNeedWord" Grid.ColumnSpan="3" TabIndex="4" Content="Source document is in Word format" HorizontalAlignment="Left" Height="24" Margin="134,211,0,0" ToolTip="There is a slight upcharge for documents that are submitted to us in Word format." VerticalAlignment="Top" Width="213" Checked="CheckBox_Checked"/>
+        <Label Grid.ColumnSpan="3" Content="Number of pages:" HorizontalAlignment="Left" Margin="203,143,0,0" ToolTip="The number of total pages in this document." VerticalAlignment="Top" Width="106" Height="26"/>
+        <TextBox x:Name="txtNumPages" Grid.ColumnSpan="3" TabIndex="2"  HorizontalAlignment="Left" Height="20" Margin="310,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37" TextAlignment="Right"/>
         <Label Grid.ColumnSpan="3" Content="Upcharge for rush:" HorizontalAlignment="Left" Height="27" Margin="663,107,-250,0" VerticalAlignment="Top" Width="115"/>
         <TextBox x:Name="numRushUpchargeAmount" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="794,108,-417,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151"/>
         <Label Grid.ColumnSpan="3" Content="Upcharge for Word format:" HorizontalAlignment="Left" Height="27" Margin="631,140,-261,0" VerticalAlignment="Top" Width="158"/>
         <TextBox x:Name="numWordUpchargePercent" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="794,140,-305,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39"/>
         <TextBox x:Name="numWordUpchargeAmount" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="852,140,-419,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95"/>
-        <Label Grid.ColumnSpan="3" Content="Grand Total:" HorizontalAlignment="Left" Height="27" Margin="196,48,0,0" VerticalAlignment="Top" Width="75"/>
-        <TextBox x:Name="numGrandTotal" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="27" Margin="271,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153"/>
-        <Button x:Name="Clear" Content="Clear all documents" HorizontalAlignment="Left" TabIndex="6" Height="27" Margin="103,387,0,0" VerticalAlignment="Top" Width="175" Grid.ColumnSpan="3" Click="Clear_Click"/>
-        <Label Grid.ColumnSpan="3" Content="Document title" HorizontalAlignment="Left" Height="28" Margin="51,128,0,0" VerticalAlignment="Top" Width="88"/>
-        <TextBox x:Name="stringDocTitle" Grid.ColumnSpan="3" TabIndex="1" HorizontalAlignment="Left" Height="31" Margin="164,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
-        <Label Grid.ColumnSpan="3" Content="Total Documents:" HorizontalAlignment="Left" Height="24" Margin="271,19,0,0" VerticalAlignment="Top" Width="101"/>
-        <TextBox x:Name="numTotalDocs" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="24" Margin="381,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43"/>
-        <Button x:Name="PreviousDoc" Content="Previous Document" HorizontalAlignment="Left" TabIndex="6" Height="27" Margin="19,343,0,0" VerticalAlignment="Top" Width="175" Grid.ColumnSpan="3" Click="PreviousDoc_Click"/>
+        <Label Grid.ColumnSpan="3" Content="Grand Total:" HorizontalAlignment="Left" Height="24" Margin="196,44,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="numGrandTotal" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="20" Margin="271,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" TextAlignment="Right"/>
+        <Button x:Name="Clear" Content="Clear all documents" HorizontalAlignment="Left" TabIndex="6" Height="27" Margin="114,358,0,0" VerticalAlignment="Top" Width="175" Grid.ColumnSpan="3" Click="Clear_Click"/>
+        <Label Grid.ColumnSpan="3" Content="Document title:" HorizontalAlignment="Left" Height="24" Margin="73,114,0,0" ToolTip="Your title for this document." VerticalAlignment="Top" Width="91"/>
+        <TextBox x:Name="stringDocTitle" Grid.ColumnSpan="3" TabIndex="1" HorizontalAlignment="Left" Height="20" Margin="164,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
+        <Label Grid.ColumnSpan="3" Content="Total Documents:" HorizontalAlignment="Left" Height="24" Margin="280,15,0,0" VerticalAlignment="Top" Width="101"/>
+        <TextBox x:Name="numTotalDocs" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="20" Margin="381,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37" TextAlignment="Right"/>
+        <Button x:Name="PreviousDoc" Content="Previous Document" HorizontalAlignment="Left" TabIndex="6" Height="27" Margin="30,314,0,0" VerticalAlignment="Top" Width="175" Grid.ColumnSpan="3" Click="PreviousDoc_Click"/>
         <Image Source="https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/2140654/145757_989657.png" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="45" Margin="19,14,0,0" VerticalAlignment="Top" Width="182"/>
 
     </Grid>
